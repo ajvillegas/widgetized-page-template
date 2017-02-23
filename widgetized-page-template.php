@@ -42,20 +42,7 @@ function activate_widgetized_page_template() {
 	
 }
 
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-widgetized-page-template-deactivator.php
- */
-function deactivate_widgetized_page_template() {
-	
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-widgetized-page-template-deactivator.php';
-	
-	Widgetized_Page_Template_Deactivator::deactivate();
-	
-}
-
 register_activation_hook( __FILE__, 'activate_widgetized_page_template' );
-register_deactivation_hook( __FILE__, 'deactivate_widgetized_page_template' );
 
 /**
  * The core plugin class that is used to define internationalization,
