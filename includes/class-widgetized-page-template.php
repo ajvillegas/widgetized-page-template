@@ -84,8 +84,8 @@ class Widgetized_Page_Template {
 	 *
 	 * - Widgetized_Page_Template_Loader. Orchestrates the hooks of the plugin.
 	 * - Widgetized_Page_Template_i18n. Defines internationalization functionality.
+	 * - Widgetized_Page_Templater. Defines all hooks related to the page template functionality.
 	 * - Widgetized_Page_Template_Admin. Defines all hooks for the admin area.
-	 * - Widgetized_Page_Template_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
