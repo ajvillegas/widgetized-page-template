@@ -49,7 +49,7 @@ class Widgetized_Page_Template_Activator {
 			// Deactivation message
 			$deactivation_message = sprintf(
 				__( 'Sorry, you can\'t activate the %1$s plugin unless you have installed %2$sGenesis%3$s.', 'widgetized-page-template' ),
-				__( 'Genesis Widgetized Page', 'widgetized-page-template' ),
+				__( 'Widgetized Page Template', 'widgetized-page-template' ),
 				'<a href="http://my.studiopress.com/themes/genesis/" target="_blank">',
 				'</a>'
 			);
