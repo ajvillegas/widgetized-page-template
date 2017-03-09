@@ -5,7 +5,7 @@ Automatically widgetize any page when using the Genesis Framework.
 **Contributors**: [ajvillegas](http://profiles.wordpress.org/ajvillegas)  
 **Tags**: [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template)  
 **Requires at least**: 4.5  
-**Tested up to**: 4.7.2  
+**Tested up to**: 4.8  
 **Stable tag**: 1.0.1  
 **License**: [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
