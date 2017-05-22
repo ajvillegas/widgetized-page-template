@@ -61,8 +61,6 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function register_page_widget_area() {
 		
-		global $wp_query;
-		
 		// Select pages using the 'Widgetized Page' template
 		$args = array(
 		    'post_type' => 'page',
