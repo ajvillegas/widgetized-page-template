@@ -32,14 +32,13 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 	 * Adds a unique class to the body element.
 	 *
 	 * @param	 array	 $classes	 An array representing the classes currently applied to the body class attribute.
-	 * @return	 array	 			 The updated array signifying the classes we wish to add to the body class attribute.
+	 * @return	 array	 $classes	 The updated array signifying the classes we wish to add to the body class attribute.
 	 *
 	 * @since	 1.0.0
 	 */
 	function wpt_plugin_add_body_class( $classes ) {
 		
 		$classes[] = 'widgetized-page';
-		
 		return $classes;
 		
 	}
