@@ -3,7 +3,7 @@
 Automatically widgetize any page when using the Genesis Framework.
 
 **Contributors**: [ajvillegas](http://profiles.wordpress.org/ajvillegas)  
-**Tags**: [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template)  
+**Tags**: [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template), [genesis](http://wordpress.org/plugins/tags/genesis)  
 **Requires at least**: 4.5  
 **Tested up to**: 4.8  
 **Stable tag**: 1.0.1  
