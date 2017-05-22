@@ -1,7 +1,7 @@
 === Widgetized Page Template ===
 Contributors: ajvillegas
 Donate link:
-Tags: admin, page-template
+Tags: admin, page-template, genesis
 Requires at least: 4.5
 Tested up to: 4.8
 Stable tag: 1.0.1
