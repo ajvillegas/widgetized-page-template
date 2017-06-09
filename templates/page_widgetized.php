@@ -152,7 +152,7 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 			$attributes['style'] = 'max-width: 100%;';
 			
 			// Add the attributes from .entry, since this replaces the main entry
-			$attributes = wp_parse_args( $attributes, genesis_attributes_entry( array() ) );
+			$attributes = wp_parse_args( $attributes, genesis_attributes_entry( array(), 10, 3 ) );
 			
 			return $attributes;
 			
@@ -186,7 +186,7 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 			$attributes['class'] .= ' page-widget-area';
 			
 			// Add the attributes from .entry, since this replaces the main entry
-			$attributes = wp_parse_args( $attributes, genesis_attributes_entry( array() ) );
+			$attributes = wp_parse_args( $attributes, genesis_attributes_entry( array(), 10, 3 ) );
 			
 			return $attributes;
 			
