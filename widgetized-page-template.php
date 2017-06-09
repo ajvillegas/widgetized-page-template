@@ -16,7 +16,7 @@
  * Plugin Name:       Widgetized Page Template
  * Plugin URI:        http://www.alexisvillegas.com/plugins/widgetized-page-template
  * Description:       Automatically generate a page-specific widget area that replaces the content of the page when selecting the Widgetized Page template.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Alexis J. Villegas
  * Author URI:        http://www.alexisvillegas.com
  * License:           GPL-2.0+
