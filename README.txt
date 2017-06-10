@@ -4,7 +4,7 @@ Donate link:
 Tags: admin, page-template, genesis
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,9 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 
 == Changelog ==
 
+= 1.0.3 =
+* Removed previous version's compatibility issue fix (no longer needed with Genesis v2.5.2).
+
 = 1.0.2 =
 * Fixed compatibility issue with Genesis v2.5.1.
 
@@ -44,3 +47,8 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 
 = 1.0.0 =
 * Initial release.
+
+== Upgrade Notice ==
+
+= 1.0.3 =
+The previous compatibility issue fix is no longer needed with Genesis v2.5.2 and it was removed from the plugin to ensure full compatibility once again. Make sure to update Genesis to the latest version.
