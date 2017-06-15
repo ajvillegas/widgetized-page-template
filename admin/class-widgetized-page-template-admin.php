@@ -140,9 +140,21 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function add_admin_notice() {
 		
+		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // get the post ID
+		$query['url'] = urlencode( get_permalink( $post_id ) );
+		$query['autofocus[section]'] = 'sidebar-widgets-page-widget-area-' . $post_id;
+		$section_link = add_query_arg( $query, wp_customize_url() );
 		$url_text = __('Widgets', 'widgetized-page-template');
+		$button_text = __('Cick Here to Edit Live', 'widgetized-page-template'); ?>
 		
-		echo '<div class="notice notice-warning inline"><p>' . sprintf( __('You are currently editing a Widgetized Page template. To edit the contents of this page, go to the %s page and edit its corresponding widget area.', 'widgetized-page-template'), '<a href="' . admin_url( 'widgets.php' ) . '">' . $url_text . '</a>' ) . '</p></div>';
+		<div class="notice notice-warning inline">
+			<p>
+				<?php echo sprintf( __('You are currently editing a Widgetized Page template. To edit the contents of this page, you can go to the %s page and edit its corresponding widget area, or click below to start editing live.', 'widgetized-page-template'), '<a href="' . esc_url( admin_url( 'widgets.php' ) ) . '">' . $url_text . '</a>' ) ?>
+			</p>
+			<p>
+				<a class="button button-secondary" href="<?php echo esc_url( $section_link ); ?>"><?php echo $button_text; ?></a>
+			</p>
+		</div> <?php
 
 	}
 
