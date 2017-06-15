@@ -69,7 +69,7 @@ class Widgetized_Page_Template {
 	public function __construct() {
 
 		$this->plugin_name = 'widgetized-page-template';
-		$this->version = '1.0.3';
+		$this->version = '1.0.4';
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_page_templater_hooks();
