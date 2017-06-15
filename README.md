@@ -6,7 +6,7 @@ Automatically widgetize any page when using the Genesis Framework.
 **Tags**: [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template), [genesis](http://wordpress.org/plugins/tags/genesis)  
 **Requires at least**: 4.5  
 **Tested up to**: 4.8  
-**Stable tag**: 1.0.3  
+**Stable tag**: 1.0.4  
 **License**: [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 # Description
@@ -35,7 +35,16 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 2. Upload the `widgetized-page-template` directory to your `wp-content/plugins` directory
 3. Activate the plugin on the WordPress Plugins Dashboard
 
+# Screenshots
+
+*Page editor screen*
+
+![Page editor screen](wp-assets/screenshot-1.png?raw=true)
+
 # Changelog
+
+**1.0.4**
+* Added a live edit button to the page editor screen that automatically redirects to the page widget area section in the Customizer.
 
 **1.0.3**
 * Removed previous version's compatibility issue fix (no longer needed with Genesis v2.5.2).
@@ -51,5 +60,5 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 
 # Upgrade Notice
 
-**1.0.3**
+**1.0.3**  
 The previous compatibility issue fix is no longer needed with Genesis v2.5.2 and it was removed from the plugin to ensure full compatibility once again. Make sure to update Genesis to the latest version.
