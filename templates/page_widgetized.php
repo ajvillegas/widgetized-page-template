@@ -19,7 +19,7 @@
  *
  * @since 1.0.0
  **/
-if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
+if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 	
 	get_header();
 		
@@ -64,7 +64,7 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 	// Get the Genesis page layout
 	$site_layout = genesis_site_layout();
 	
-	if ( 'full-width-content' == $site_layout ) {
+	if ( 'full-width-content' == $site_layout && is_singular() ) {
 		
 		/**
 		 * Custom Genesis header markup.
@@ -166,10 +166,14 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 		
 	} else {
 		
-		remove_action( 'genesis_loop', 'genesis_do_loop' );
-		add_action( 'genesis_loop', 'wpt_plugin_page_widget_area' );
+		if ( is_singular() ) {
+			
+			remove_action( 'genesis_loop', 'genesis_do_loop' );
+			add_action( 'genesis_loop', 'wpt_plugin_page_widget_area' );
+			add_filter( 'genesis_attr_content', 'wpt_plugin_content_attributes' );
 		
-		add_filter( 'genesis_attr_content', 'wpt_plugin_content_attributes' );
+		}
+		
 		/**
 		 * Add attributes to .content.
 		 * 
@@ -190,6 +194,31 @@ if ( !class_exists( 'Genesis_Admin_Boxes' ) ) {
 			
 			return $attributes;
 			
+		}
+		
+		/**
+		 * Add archive title to search results.
+		 *
+		 * @since	 1.0.5
+		 */
+		if ( is_search() ) {
+			
+			add_action( 'genesis_before_loop', 'wpt_plugin_do_search_title' );
+			
+		}
+		
+		
+		/**
+		 * Echo the title with the search term.
+		 *
+		 * @since	 1.0.5
+		 */
+		function wpt_plugin_do_search_title() {
+		
+			$title = sprintf( '<div class="archive-description"><h1 class="archive-title">%s %s</h1></div>', apply_filters( 'genesis_search_title_text', __( 'Search Results for:', 'genesis' ) ), get_search_query() );
+		
+			echo apply_filters( 'genesis_search_title_output', $title ) . "\n";
+		
 		}
 		
 		genesis();
