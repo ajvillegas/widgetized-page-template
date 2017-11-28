@@ -118,8 +118,9 @@ class Widgetized_Page_Template_Admin {
 		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // get the post ID
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 		
-		if( !isset( $post_id ) || !class_exists( 'Genesis_Admin_Boxes' ) )
+		if ( ! isset( $post_id ) || ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 			return;
+		}
 	
 		if ( 'page_widgetized.php' == $page_template ) {
 			
