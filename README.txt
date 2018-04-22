@@ -1,10 +1,10 @@
 === Widgetized Page Template ===
 Contributors: ajvillegas
 Donate link:
-Tags: admin, page-template, genesis
+Tags: widgetize page, widgets in page, widgets, admin, page-template, genesis
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.0.5
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,9 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 1. Page editor screen
 
 == Changelog ==
+
+= 1.1.0 =
+* The page widget area output is now automatically saved to `post_content` in the database for improved indexing and site search.
 
 = 1.0.5 =
 * Fixed bug where page template was breaking search results and prevented them from displaying correctly.
