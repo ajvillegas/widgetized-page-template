@@ -39,6 +39,7 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 	function wpt_plugin_add_body_class( $classes ) {
 		
 		$classes[] = 'widgetized-page';
+		
 		return $classes;
 		
 	}
@@ -51,11 +52,12 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 	function wpt_plugin_page_widget_area() {
 		
 		global $post;
-		$widget_id = 'page-widget-area-' . $post->ID;
 		
-		if ( is_active_sidebar( $widget_id ) ) {
+		$sidebar_id = 'page-widget-area-' . $post->ID;
+		
+		if ( is_active_sidebar( $sidebar_id ) ) {
 			
-			dynamic_sidebar( $widget_id );
+			dynamic_sidebar( $sidebar_id );
 			
 		}
 		
@@ -64,7 +66,7 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 	// Get the Genesis page layout
 	$site_layout = genesis_site_layout();
 	
-	if ( 'full-width-content' == $site_layout && is_singular() ) {
+	if ( is_singular() && 'full-width-content' == $site_layout ) {
 		
 		/**
 		 * Custom Genesis header markup.
@@ -136,8 +138,8 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 		/**
 		 * Add attributes to .page-widget-area.
 		 * 
-		 * @param	 array	 $attributes	 Existing attributes
-		 * @return	 array	 				 Amended attributes
+		 * @param	 array	 $attributes	Existing attributes
+		 * @return	 array	 				Amended attributes
 		 *
 		 * @author	 Alexis J. Villegas <alexis@ajvillegas.com>
 		 * @author	 Bill Erickson <bill.erickson@gmail.com>
@@ -164,21 +166,17 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 			
 		wpt_plugin_genesis_footer();
 		
-	} else {
+	} elseif ( is_singular() ) {
 		
-		if ( is_singular() ) {
-			
-			remove_action( 'genesis_loop', 'genesis_do_loop' );
-			add_action( 'genesis_loop', 'wpt_plugin_page_widget_area' );
-			add_filter( 'genesis_attr_content', 'wpt_plugin_content_attributes' );
+		remove_action( 'genesis_loop', 'genesis_do_loop' );
+		add_action( 'genesis_loop', 'wpt_plugin_page_widget_area' );
 		
-		}
-		
+		add_filter( 'genesis_attr_content', 'wpt_plugin_content_attributes' );
 		/**
 		 * Add attributes to .content.
 		 * 
-		 * @param	 array	 $attributes	 Existing attributes
-		 * @return	 array	 				 Amended attributes
+		 * @param	 array	 $attributes	Existing attributes
+		 * @return	 array	 				Amended attributes
 		 *
 		 * @author	 Alexis J. Villegas <alexis@ajvillegas.com>
 		 * @author	 Bill Erickson <bill.erickson@gmail.com>
@@ -196,32 +194,11 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 			
 		}
 		
-		/**
-		 * Add archive title to search results.
-		 *
-		 * @since	 1.0.5
-		 */
-		if ( is_search() ) {
-			
-			add_action( 'genesis_before_loop', 'wpt_plugin_do_search_title' );
-			
-		}
-		
-		
-		/**
-		 * Echo the title with the search term.
-		 *
-		 * @since	 1.0.5
-		 */
-		function wpt_plugin_do_search_title() {
-		
-			$title = sprintf( '<div class="archive-description"><h1 class="archive-title">%s %s</h1></div>', apply_filters( 'genesis_search_title_text', __( 'Search Results for:', 'genesis' ) ), get_search_query() );
-		
-			echo apply_filters( 'genesis_search_title_output', $title ) . "\n";
-		
-		}
-		
 		genesis();
+		
+	} elseif ( is_search() ) {
+			
+		require_once( get_template_directory() . '/search.php' );
 		
 	}
 
