@@ -124,7 +124,7 @@ class Widgetized_Page_Template_Admin {
 		
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 		
-		// Bail of not using Widgetized Page template
+		// Bail if not using Widgetized Page template
 		if ( 'page_widgetized.php' != $page_template ) {
 			return;
 		}
