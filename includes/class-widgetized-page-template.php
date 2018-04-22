@@ -69,7 +69,7 @@ class Widgetized_Page_Template {
 	public function __construct() {
 
 		$this->plugin_name = 'widgetized-page-template';
-		$this->version = '1.0.5';
+		$this->version = '1.1.0';
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_page_templater_hooks();
@@ -189,6 +189,9 @@ class Widgetized_Page_Template {
 		
 		// Add a hook to conditionally remove the page editor.
 		$this->loader->add_action( 'init', $plugin_admin, 'remove_page_editor' );
+		
+		// Update page content with widget area output
+		$this->loader->add_action( 'init', $plugin_admin, 'update_post_content' );
 
 	}
 
