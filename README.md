@@ -3,10 +3,10 @@
 Automatically widgetize any page when using the Genesis Framework.
 
 **Contributors**: [ajvillegas](http://profiles.wordpress.org/ajvillegas)  
-**Tags**: [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template), [genesis](http://wordpress.org/plugins/tags/genesis)  
+**Tags**: [widgetize page](http://wordpress.org/plugins/tags/widgetize-page), [widgets in page](http://wordpress.org/plugins/tags/widgets-in-page), [widgets](http://wordpress.org/plugins/tags/widgets), [admin](http://wordpress.org/plugins/tags/admin), [page-template](http://wordpress.org/plugins/tags/page-template), [genesis](http://wordpress.org/plugins/tags/genesis)  
 **Requires at least**: 4.5  
 **Tested up to**: 4.9  
-**Stable tag**: 1.0.5  
+**Stable tag**: 1.1.0  
 **License**: [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 # Description
@@ -42,6 +42,9 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 ![Page editor screen](wp-assets/screenshot-1.png?raw=true)
 
 # Changelog
+
+**1.1.0**
+* The page widget area output is now automatically saved to `post_content` in the database for improved indexing and site search.
 
 **1.0.5**
 * Fixed bug where page template was breaking search results and prevented them from displaying correctly.
