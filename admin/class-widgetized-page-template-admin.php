@@ -106,6 +106,48 @@ class Widgetized_Page_Template_Admin {
 	}
 	
 	/**
+	 * Update page content with widget area output.
+	 *
+	 * Saves the HTML output of the page widget area
+	 * to post_content for improved site search.
+	 *
+	 * @since	1.1.0
+	 */
+	public function update_post_content() {
+		
+		if ( is_admin() ) {
+			$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] );
+		} else {
+			$page_url = home_url( add_query_arg( null, null ) );
+			$post_id = url_to_postid( $page_url );
+		}
+		
+		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
+		
+		// Bail of not using Widgetized Page template
+		if ( 'page_widgetized.php' != $page_template ) {
+			return;
+		}
+		
+		$post_title = get_the_title( $post_id );
+		$sidebar_id = 'page-widget-area-' . $post_id;
+		
+		ob_start();
+		dynamic_sidebar( $sidebar_id );
+		$sidebar_content = ob_get_clean();
+		//$sidebar_text = wp_strip_all_tags( $sidebar_content );
+		
+		$page = array(
+			'ID'           => $post_id,
+			'post_title'   => $post_title,
+			'post_content' => $sidebar_content,
+		);
+		
+		wp_update_post( $page );
+		
+	}
+	
+	/**
 	 * Conditionally remove the editor.
 	 *
 	 * This function removes the page editor from the edit post screen when
@@ -115,7 +157,7 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function remove_page_editor() {
 		
-		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // get the post ID
+		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] );
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 		
 		if ( ! isset( $post_id ) || ! class_exists( 'Genesis_Admin_Boxes' ) ) {
@@ -141,7 +183,7 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function add_admin_notice() {
 		
-		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // get the post ID
+		$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] );
 		$query['url'] = urlencode( get_permalink( $post_id ) );
 		$query['autofocus[section]'] = 'sidebar-widgets-page-widget-area-' . $post_id;
 		$section_link = add_query_arg( $query, wp_customize_url() );
