@@ -139,7 +139,7 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 		 * Add attributes to .page-widget-area.
 		 * 
 		 * @param	 array	 $attributes	Existing attributes
-		 * @return	 array	 				Amended attributes
+		 * @return	 array	 $attributes	Amended attributes
 		 *
 		 * @author	 Alexis J. Villegas <alexis@ajvillegas.com>
 		 * @author	 Bill Erickson <bill.erickson@gmail.com>
@@ -176,7 +176,7 @@ if ( ! class_exists( 'Genesis_Admin_Boxes' ) ) {
 		 * Add attributes to .content.
 		 * 
 		 * @param	 array	 $attributes	Existing attributes
-		 * @return	 array	 				Amended attributes
+		 * @return	 array	 $attributes	Amended attributes
 		 *
 		 * @author	 Alexis J. Villegas <alexis@ajvillegas.com>
 		 * @author	 Bill Erickson <bill.erickson@gmail.com>
