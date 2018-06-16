@@ -124,7 +124,7 @@ class Widgetized_Page_Templater {
 	}
 	
 	/**
-	 * Checks if the template is assigned to the page.
+	 * Check if the template is assigned to the page and return its path.
 	 *
 	 * @author	Tom McFarlin <tom@tommcfarlin.com>
 	 * @since	1.0.0
@@ -135,11 +135,11 @@ class Widgetized_Page_Templater {
 
 		// If no posts found, return to
 		// avoid "Trying to get property of non-object" error
-		if ( !isset( $post ) ) {
+		if ( ! isset( $post ) ) {
 			return $template;
 		}
 
-		if ( !isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) ) {
+		if ( ! isset( $this->templates[ get_post_meta( $post->ID, '_wp_page_template', true ) ] ) ) {
 			return $template;
 		}
 

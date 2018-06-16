@@ -168,7 +168,7 @@ class Widgetized_Page_Template {
 		// Add a filter to the save post in order to inject our template into the page cache
 		$this->loader->add_filter( 'wp_insert_post_data', $plugin_templater, 'register_plugin_templates' );
 
-		// Add a filter to the template include in order to determine if the page has our template assigned and return it's path
+		// Add a filter to the template include in order to determine if the page has our template assigned and return its path
 		$this->loader->add_filter( 'template_include', $plugin_templater, 'view_plugin_template' );
 		
 	}
