@@ -3,7 +3,7 @@ Contributors: ajvillegas
 Donate link:
 Tags: widgetize page, widgets in page, widgets, admin, page-template, genesis
 Requires at least: 4.5
-Tested up to: 4.9
+Tested up to: 5.4
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,8 @@ add_theme_support( 'genesis-structural-wraps', array( 'header', 'footer-widgets'
 
 = 1.1.0 =
 * The page widget area output is now automatically saved to `post_content` in the database for improved indexing and site search.
+* Code and syntax fixes to ensure compatibility with latest WordPress version.
+* Added Spanish translations.
 
 = 1.0.5 =
 * Fixed bug where page template was breaking search results and prevented them from displaying correctly.
