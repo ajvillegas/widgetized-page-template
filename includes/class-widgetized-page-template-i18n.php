@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,12 +23,12 @@
  * @subpackage Widgetized_Page_Template/includes
  * @author     Alexis J. Villegas <alexis@ajvillegas.com>
  */
-class Widgetized_Page_Template_i18n {
+class Widgetized_Page_Template_I18n {
 
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function load_plugin_textdomain() {
 
