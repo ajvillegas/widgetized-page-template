@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -35,11 +34,11 @@ if ( ! defined( 'WPINC' ) ) {
  * This action is documented in includes/class-widgetized-page-template-activator.php
  */
 function activate_widgetized_page_template() {
-	
+
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-widgetized-page-template-activator.php';
-	
+
 	Widgetized_Page_Template_Activator::activate();
-	
+
 }
 
 register_activation_hook( __FILE__, 'activate_widgetized_page_template' );
@@ -57,7 +56,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-widgetized-page-template.p
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since 1.0.0
  */
 function run_widgetized_page_template() {
 
@@ -65,4 +64,5 @@ function run_widgetized_page_template() {
 	$plugin->run();
 
 }
+
 run_widgetized_page_template();
