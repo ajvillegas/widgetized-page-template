@@ -117,7 +117,7 @@ class Widgetized_Page_Template_Admin {
 	public function update_post_content() {
 
 		if ( is_admin() ) {
-			$post_id = isset( $_GET['post'] ) ? wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['post'] ) ) ) : wp_verify_nonce( isset( $_POST['post_ID'] ) );
+			$post_id = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // phpcs:ignore
 		} else {
 			$page_url = home_url( add_query_arg( null, null ) );
 			$post_id  = url_to_postid( $page_url );
@@ -157,7 +157,7 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function remove_page_editor() {
 
-		$post_id       = isset( $_GET['post'] ) ? wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['post'] ) ) ) : wp_verify_nonce( isset( $_POST['post_ID'] ) );
+		$post_id       = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // phpcs:ignore
 		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
 
 		if ( ! isset( $post_id ) || ! class_exists( 'Genesis_Admin_Boxes' ) ) {
@@ -183,7 +183,7 @@ class Widgetized_Page_Template_Admin {
 	 */
 	public function add_admin_notice() {
 
-		$post_id                     = isset( $_GET['post'] ) ? wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['post'] ) ) ) : wp_verify_nonce( isset( $_POST['post_ID'] ) );
+		$post_id                     = isset( $_GET['post'] ) ? $_GET['post'] : isset( $_POST['post_ID'] ); // phpcs:ignore
 		$query['url']                = rawurlencode( get_permalink( $post_id ) );
 		$query['autofocus[section]'] = 'sidebar-widgets-page-widget-area-' . $post_id;
 		$section_link                = add_query_arg( $query, wp_customize_url() );
